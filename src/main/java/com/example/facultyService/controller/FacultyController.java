@@ -17,6 +17,9 @@ public class FacultyController {
     @Value("${messenger.author}")
     private String hello;
 
+    @Value("${messenger}")
+    private String messengerFromCloud;
+
     @Autowired
     private FacultyService facultyService;
 
@@ -35,5 +38,10 @@ public class FacultyController {
     @GetMapping("/")
     public String hello(){
         return hello;
+    }
+
+    @GetMapping("/cloud-config")
+    public String getMessengerFromCloudConfigServer(){
+        return messengerFromCloud;
     }
 }

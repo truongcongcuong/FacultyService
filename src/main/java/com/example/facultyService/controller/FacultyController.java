@@ -32,6 +32,12 @@ public class FacultyController {
         return facultyService.findFacultyById(id);
     }
 
+    @GetMapping("/exception")
+    public Faculty findFacultyThrowingException() throws Exception {
+        log.info("controller faculty - find faculty throwing exception : ");
+        return facultyService.findFacultyThrowingException();
+    }
+
     @GetMapping("/")
     public String hello(){
         return hello;

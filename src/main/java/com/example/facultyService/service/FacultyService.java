@@ -21,4 +21,9 @@ public class FacultyService {
         log.info("find Faculty by id : "+id);
         return facultyRepository.findById(id).get();
     }
+
+
+    public Faculty findFacultyThrowingException() throws Exception {
+        throw new Exception("Exception In Falcuty");
+    }
 }

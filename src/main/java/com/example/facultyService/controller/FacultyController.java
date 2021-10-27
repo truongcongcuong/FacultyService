@@ -32,6 +32,26 @@ public class FacultyController {
         return facultyService.findFacultyById(id);
     }
 
+    @GetMapping("/clear/{id}")
+    public void clearFacultyById(@PathVariable("id") Integer id){
+        log.info("controller faculty - find faculty by id : "+id);
+         facultyService.clearFacultyById(id);
+    }
+
+
+    @GetMapping("/clear-all")
+    public void clearAll(){
+        facultyService.clearFaculties();
+    }
+
+    @GetMapping("/put/{id}")
+    public Faculty put(@PathVariable("id") Integer id){
+        log.info("controller faculty - find faculty by id : "+id);
+        return facultyService.putFaculties(id);
+    }
+
+
+
     @GetMapping("/")
     public String hello(){
         return hello;
